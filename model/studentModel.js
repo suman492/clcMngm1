@@ -9,11 +9,6 @@ const studentInfoSchema= new mongoose.Schema({
         type: String,
         required: true,
       },
-      unique_id:{
-        type: Number,
-        required:true,
-        unique:true
-      },
       mail_id:{
         type: String,
         required:true,

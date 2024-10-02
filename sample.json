@@ -1,0 +1,75 @@
+[
+    {
+       "first_name" : "Shahid",
+       "last_name" : "Kapoor",
+       "mail_id" : " shahidkapoor@gmail.com",
+       "current_address": "berhampur",
+       "attendence":"52",
+       "total_score":"455",
+       "avg_cgpa": "7"
+    } ,  
+   
+   
+    {
+       "first_name" : "Sidhant",
+       "last_name" : "Chaturvedi",
+       "mail_id" : " sidhantchaturvedi@gmail.com",
+       "current_address": "Bhubaneswar",
+       "attendence":"82",
+       "total_score":"555.5",
+       "avg_cgpa": "8.5"
+    }   ,
+   
+   
+   
+   
+    {
+       "first_name" : "Kamal",
+       "last_name" : "Haasan",
+       "mail_id" : " kamalhaasan@gmail.com",
+       "current_address": "Chennai",
+       "attendence":"42",
+       "total_score":"495",
+       "avg_cgpa": "9"
+    }   ,
+   
+   
+   
+   
+    {
+       "first_name" : "Ranbir",
+       "last_name" : "Kapoor",
+       "mail_id" : " RanbirKapoor@gmail.com",
+       "current_address": "Kolkata",
+       "attendence":"32%",
+       "total_score":"355.5",
+       "avg_cgpa": "3.7"
+    }   ,
+   
+   
+   
+   
+    {
+       "first_name" : "Saif Ali ",
+       "last_name" : "Khan",
+       "mail_id" : " saifalikhan@gmail.com",
+       "current_address": "Indore",
+       "attendence":"86%",
+       "total_score":"483.5",
+       "avg_cgpa": "8.9"
+    }  , 
+   
+   
+   
+   
+    {
+       "first_name" : "Ayushmann",
+       "last_name" : "Khurana",
+       "mail_id" : " ayushmannkhurana@gmail.com",
+       "current_address": "Bareily",
+       "attendence":"69",
+       "total_score":"368.5",
+       "avg_cgpa": "6.6"
+    }   
+   
+   ]

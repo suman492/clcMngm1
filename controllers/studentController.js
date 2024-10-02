@@ -5,7 +5,6 @@ exports.createStudentInfo=async(req,res)=>{
         let newStudent=new studentModel({
             first_name: req.body.first_name,
             last_name:req.body.last_name,
-            unique_id: req.body.unique_id,
             mail_id: req.body.mail_id,
             current_address: req.body.current_address,
             attendence: req.body.attendence,
@@ -14,7 +13,7 @@ exports.createStudentInfo=async(req,res)=>{
         });
         newStudent=await newStudent.save();
         res.send(newStudent)
-    }catch(error)
+    }catch(err)
     {
         res.status(400).send(err.message); // Send an error response if something goes wrong
 
@@ -33,3 +32,13 @@ exports.getstudentInfo=async(req ,res)=>{
     }
     
 }
+
+exports.getstudentById = async(req, res) => {
+    try{
+        const studentById = await studentModel.findById(req.params.id);
+        if(!studentById) return res.status(404).send('Student not found in database');
+        res.send(studentById);
+    }catch(err){
+        res.status(400).send(err.message);
+    }
+};

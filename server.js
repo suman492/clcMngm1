@@ -1,6 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
-const bookRoutes = require('./routes/studentRoutes');
+const studentRoutes = require('./routes/studentRoutes');
 // const mongoose = require('mongoose');
 
 connectDB();
@@ -10,7 +10,7 @@ const port = 3000;
 
 app.use(express.json())
 
-app.use('/api', bookRoutes); 
+app.use('/api', studentRoutes); 
 let student = [];
 
 app.get('/books',(req,res) => {
