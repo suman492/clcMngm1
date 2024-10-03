@@ -8,6 +8,6 @@ router.post('/student', studentController.createStudentInfo);      // Create a n
 router.get('/student', studentController.getstudentInfo);
 router.get('/student/:id',studentController.getstudentById);
 router.put('/student/:id',studentController.updateStudent);
-
+router.delete('/student/:id',studentController.deleteStudent);
 
 module.exports = router;

@@ -3,17 +3,18 @@ const connectDB = require('./config/db');
 const studentRoutes = require('./routes/studentRoutes');
 // const mongoose = require('mongoose');
 
-connectDB();
-const app = express();
-const port = 3000;
 
+const app = express();
+const port = process.env.PORT || 3000;
+
+connectDB();
 
 app.use(express.json())
 
 app.use('/api', studentRoutes); 
 let student = [];
 
-app.get('/books',(req,res) => {
+app.get('/',(req,res) => {
     res.send('hello world!');
 });
 
