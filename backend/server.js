@@ -11,12 +11,10 @@ connectDB();
 
 app.use(express.json())
 
-app.use('/api', studentRoutes); 
-
 app.get('/',(req,res) => {
-   return res.send('hello world!');
-});
-
+    return res.send('hello world!');
+ });
+app.use('/api', studentRoutes); 
 
 
 app.listen(port,() => {

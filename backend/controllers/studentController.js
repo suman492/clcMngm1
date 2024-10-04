@@ -61,12 +61,11 @@ exports.updateStudent = async (req, res) => {
     }
 };
 
-exports.deleteStudent = async (req, res) => {
+exports.deleteStudentById = async (req, res) => {
     try {
         const studentById = await studentModel.findByIdAndDelete(req.params.id);
         if (!studentById) return res.status(404).send('Student not found in database');
-        res.status(204).send();
-        res.send("Student deleted successfully");
+        res.status(204).send("Student deleted successfully");
     } catch (err) {
         res.status(400).send(err.message);
     }
