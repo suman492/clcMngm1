@@ -12,10 +12,9 @@ connectDB();
 app.use(express.json())
 
 app.use('/api', studentRoutes); 
-let student = [];
 
 app.get('/',(req,res) => {
-    res.send('hello world!');
+   return res.send('hello world!');
 });
 
 
