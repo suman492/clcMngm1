@@ -62,7 +62,7 @@ const Navbar = () => {
           <IconButton
             color="primary"
             component="a"
-            href="https://github.com/88chinu/clinicManagement"
+            href="https://github.com/suman492/stdmkMgmt"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub">
