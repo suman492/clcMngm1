@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import CreateBook from './components/CreateBook';
+// import CreateStudent from './components/CreateStudent';
 // import ShowBookList from './components/ShowBookList';
 // import ShowBookDetails from './components/ShowBookDetails';
 // import UpdateBookInfo from './components/UpdateBookInfo';
