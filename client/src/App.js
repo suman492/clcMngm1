@@ -5,13 +5,13 @@ import Footer from './components/footer';
 import Navbar from './components/Navbar';
 
 //import {ThemeProvider} from '@mui/material/styles';
-import {CssBaseline} from '@mui/material';
+//import {CssBaseline} from '@mui/material';
 
 
 const App = () => {
   return (
     <div>
-    <CssBaseline />
+    
     
     <Navbar />
     <Footer />
