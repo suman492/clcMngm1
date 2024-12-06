@@ -1,21 +1,36 @@
+// src/App.js
 import React from 'react';
-//import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { ThemeProvider } from '@mui/material/styles';
+import { Box } from '@mui/material';
+// import { CssBaseline, Box } from '@mui/material';
+// import rosePineTheme from './theme/rosepine';
 
-import Footer from './components/footer';
 import Navbar from './components/Navbar';
-
-//import {ThemeProvider} from '@mui/material/styles';
-//import {CssBaseline} from '@mui/material';
-
+import Footer from './components/Footer';
+// import CreateBook from './components/CreateBook';
+// import ShowBookList from './components/ShowBookList';
+// import ShowBookDetails from './components/ShowBookDetails';
+// import UpdateBookInfo from './components/UpdateBookInfo';
+import HomePage from './components/Homepage';
+// import NotesPage from './components/NotesPage'; // Import NotesPage component
 
 const App = () => {
   return (
-    <div>
-    
-    
-    <Navbar />
-    <Footer />
-    </div>
+    // <ThemeProvider theme={rosePineTheme}>
+      // <CssBaseline />
+      <Router>
+        <Box display="flex" flexDirection="column" minHeight="100vh">
+          <Navbar />
+          <Box component="main" flexGrow={1} py={3}>
+            <Routes>
+              <Route exact path='/' element={<HomePage />} />
+            </Routes>
+          </Box>
+          <Footer />
+        </Box>
+      </Router>
+    // </ThemeProvider>
   );
 };
 
