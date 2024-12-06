@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -10,9 +10,9 @@ import {
   Menu,
   MenuItem,
 } from '@mui/material';
-//import GitHubIcon from '@mui/icons-material/GitHub';
-//import HomeIcon from '@mui/icons-material/Home';
-//import MenuBookIcon from '@mui/icons-material/MenuBook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import HomeIcon from '@mui/icons-material/Home';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const notesPages = [
     { title: 'Home', path: '/notes/home' },
@@ -37,7 +37,37 @@ const Navbar = () => {
         Student Mark Management
         </Typography>
         <Box sx = {{ display: 'flex' , alignItems: 'center' , gap: '1'}}>
-
+        <Button color="primary" component={RouterLink} to="/" startIcon={<HomeIcon />} >
+            Home
+          </Button>
+          <Button color="primary" onClick={handleNotesClick} startIcon={<MenuBookIcon />} >
+            Notes
+          </Button>
+          <Menu
+            anchorEl={notesAnchorEl}
+            open={Boolean(notesAnchorEl)}
+            onClose={handleNotesClose}
+          >
+            {notesPages.map((page) => (
+              <MenuItem 
+                key={page.path} 
+                component={RouterLink} 
+                to={page.path}
+                onClick={handleNotesClose}
+              >
+                {page.title}
+              </MenuItem>
+            ))}
+          </Menu>
+          <IconButton
+            color="primary"
+            component="a"
+            href="https://github.com/88chinu/clinicManagement"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub">
+            <GitHubIcon />
+          </IconButton>
         </Box>
       </Toolbar>
     </AppBar>
