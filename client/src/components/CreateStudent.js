@@ -17,7 +17,7 @@ const CreateStudent = (props) => {
     });
 
     const onChange = (e) => {
-        setBook({ ...student, [e.target.name]: e.target.value });
+        setStudent({ ...student, [e.target.name]: e.target.value });
       };
 
       const onSubmit = (e) => {
@@ -43,8 +43,16 @@ const CreateStudent = (props) => {
           }, 5000); // Adjust the timeout as needed
   
         })
-      }
+        .catch((err) => {
+            console.log('Error in CreateStudent!');
+            console.log('The error is ->')
+            console.log(err)
+        });
+      };
+
+
     return (
+        
         <div className='CreateStudent'>
             {/* <Navbar /> */}
             <div className='container'>
@@ -143,3 +151,5 @@ const CreateStudent = (props) => {
         </div>
     )
 }
+
+export default CreateStudent;

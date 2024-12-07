@@ -16,6 +16,13 @@ const Homepage = () => {
                    variant='contained'
                    >view students
                 </Button>
+                <Button
+                component={Link}
+                to="/create-student"
+                color='primary'
+                variant='contained'
+                >Create student
+                </Button>
             </Box>
         </Container>
     );
