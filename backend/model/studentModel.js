@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const studentInfoSchema= new mongoose.Schema({
     name:{
         type: String,
-        required: true,
-        unique: true  // student  name is compulsory 
+        required: true
       },
       // last_name:{
       //   type: String,
@@ -12,12 +11,12 @@ const studentInfoSchema= new mongoose.Schema({
       // },
       mail_id:{
         type: String,
-        required:true
+        required:true,
+        unique: true
       },
       dob:{
         type: Date,
-        required: true,
-        unique: true
+        required: true
       },
       current_address:{ 
         type: String,

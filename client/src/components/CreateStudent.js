@@ -26,21 +26,10 @@ const CreateStudent = (props) => {
                             <div className='form-group'>
                                 <input
                                     type='text'
-                                    placeholder='First Name of the Student'
-                                    name='fname'
+                                    placeholder='Name of the Student'
+                                    name='name'
                                     className='form-control'
-                                    value={student.first_name}
-                                    onChange={onChange}
-                                />
-                            </div>
-                            <br />
-                            <div className='form-group'>
-                                <input
-                                    type='text'
-                                    placeholder='Last name of the student'
-                                    name='lname'
-                                    className='form-control'
-                                    value={student.last_name}
+                                    value={student.name}
                                     onChange={onChange}
                                 />
                             </div>
@@ -56,6 +45,71 @@ const CreateStudent = (props) => {
                                 />
                             </div>
                             <br />
+                            <div className='form-group'>
+                                <input
+                                    type='date'
+                                    placeholder='Enter date of birth'
+                                    name='dob'
+                                    className='form-control'
+                                    value={student.dob}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+                            <div className='form-group'>
+                                <input
+                                    type='date'
+                                    placeholder='Enter date of birth'
+                                    name='dob'
+                                    className='form-control'
+                                    value={student.dob}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+                            <div className='form-group'>
+                                <input
+                                    type='text'
+                                    placeholder='Enter your current address'
+                                    name='address'
+                                    className='form-control'
+                                    value={student.current_address}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+                            <div className='form-group'>
+                                <input
+                                    type='text'
+                                    placeholder='Enter True or False'
+                                    name='attendence'
+                                    className='form-control'
+                                    value={student.attendence}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+                            <div className='form-group'>
+                                <input
+                                    type='number'
+                                    placeholder='Enter the Total Score'
+                                    name='score'
+                                    className='form-control'
+                                    value={student.total_score}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+                            <div className='form-group'>
+                                <input
+                                    type='number'
+                                    placeholder='Enter Average CGPA'
+                                    name='cgpa'
+                                    className='form-control'
+                                    value={student.avg_cgpa}
+                                    onChange={onChange}
+                                />
+                            </div>
                         </form>    
                     </div>
                 </div>
