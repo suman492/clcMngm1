@@ -3,9 +3,9 @@ const studentModel = require('../model/studentModel'); //importing the student m
 exports.createStudentInfo = async (req, res) => {
     try {
         let newStudent = new studentModel({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
+            name: req.body.name,
             mail_id: req.body.mail_id,
+            dob: req.body.dob,
             current_address: req.body.current_address,
             attendence: req.body.attendence,
             total_score: req.body.total_score,
@@ -45,9 +45,9 @@ exports.getstudentById = async (req, res) => {
 exports.updateStudent = async (req, res) => {
     try {
         const studentById = await studentModel.findByIdAndUpdate(req.params.id, {
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
+            name: req.body.name,
             mail_id: req.body.mail_id,
+            dob: req.body.dob,
             current_address: req.body.current_address,
             attendence: req.body.attendence,
             total_score: req.body.total_score,
