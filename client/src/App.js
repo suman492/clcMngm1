@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import CreateStudent from './components/CreateStudent';
+import CreateStudent from './components/CreateStudent';
 // import ShowBookList from './components/ShowBookList';
 // import ShowBookDetails from './components/ShowBookDetails';
 // import UpdateBookInfo from './components/UpdateBookInfo';
@@ -25,6 +25,7 @@ const App = () => {
           <Box component="main" flexGrow={1} py={3}>
             <Routes>
               <Route exact path='/' element={<HomePage />} />
+              <Route path='/create-student' element={<CreateStudent />} />
             </Routes>
           </Box>
           <Footer />

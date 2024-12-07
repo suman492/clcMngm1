@@ -2,11 +2,48 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-//import axios from 'axios';
+import axios from 'axios';
 
 const CreateStudent = (props) => {
+    const navigate = useNavigate();
+    const [student, setStudent ] = useState({
+        name: '',
+        mail_id: '',
+        dob: '',
+        current_address: '',
+        attendence: '',
+        total_score: '',
+        avg_cgpa: ''
+    });
 
+    const onChange = (e) => {
+        setBook({ ...student, [e.target.name]: e.target.value });
+      };
 
+      const onSubmit = (e) => {
+        e.preventDefault();
+    
+        axios
+          .post('/api/students', student)
+          .then((res) => {
+            setStudent({
+                name: '',
+                mail_id: '',
+                dob: '',
+                current_address: '',
+                attendence: '',
+                total_score: '',
+                avg_cgpa: ''
+            });
+
+            // Delay the navigation slightly to allow the toast to be seen
+        setTimeout(() => {
+            //setShowToast(false); // Hide the toast
+            navigate('/'); // Navigate to homepage
+          }, 5000); // Adjust the timeout as needed
+  
+        })
+      }
     return (
         <div className='CreateStudent'>
             {/* <Navbar /> */}
@@ -41,17 +78,6 @@ const CreateStudent = (props) => {
                                     name='email'
                                     className='form-control'
                                     value={student.mail_id}
-                                    onChange={onChange}
-                                />
-                            </div>
-                            <br />
-                            <div className='form-group'>
-                                <input
-                                    type='date'
-                                    placeholder='Enter date of birth'
-                                    name='dob'
-                                    className='form-control'
-                                    value={student.dob}
                                     onChange={onChange}
                                 />
                             </div>
