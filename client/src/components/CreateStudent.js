@@ -59,7 +59,7 @@ const CreateStudent = (props) => {
         <div className='row w-100'>
             <div className='col-md-8 m-auto'>
                 <br />
-                <Link to='/' className='btn btn-outline-warning float-left'>
+                <Link to='/create-student' className='btn btn-outline-warning float-left'>
                     Show Student list
                 </Link>
             </div>

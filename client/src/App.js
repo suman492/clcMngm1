@@ -2,10 +2,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-// import { ThemeProvider } from '@mui/material/styles';
-import { Box } from '@mui/material';
-// import { CssBaseline, Box } from '@mui/material';
-// import rosePineTheme from './theme/rosepine';
+import { ThemeProvider } from '@mui/material/styles';
+// import { Box } from '@mui/material';
+import { CssBaseline, Box } from '@mui/material';
+import calmOceanTheme from './theme/calmOcean';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,8 +18,8 @@ import HomePage from './components/Homepage';
 
 const App = () => {
   return (
-    // <ThemeProvider theme={rosePineTheme}>
-      // <CssBaseline />
+    <ThemeProvider theme={calmOceanTheme}>
+       <CssBaseline />
       <Router>
         <Box display="flex" flexDirection="column" minHeight="100vh">
           <Navbar />
@@ -32,7 +32,7 @@ const App = () => {
           <Footer />
         </Box>
       </Router>
-    // </ThemeProvider>
+     </ThemeProvider>
   );
 };
 
