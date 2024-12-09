@@ -1,4 +1,4 @@
-.box-container {
+ .box-container {
   align-items: center;
   justify-content: center;
   border: 1.5px solid rgb(255, 255, 255);
@@ -142,4 +142,4 @@ footer{
 .notification button {
   float: right;
   margin-left: 10px;
-}
+} 

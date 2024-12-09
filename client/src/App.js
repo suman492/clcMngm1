@@ -10,7 +10,7 @@ import calmOceanTheme from './theme/calmOcean';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CreateStudent from './components/CreateStudent';
-// import ShowBookList from './components/ShowBookList';
+import ShowStudentList from './components/ShowStudentList';
 // import ShowBookDetails from './components/ShowBookDetails';
 // import UpdateBookInfo from './components/UpdateBookInfo';
 import HomePage from './components/Homepage';
@@ -26,6 +26,7 @@ const App = () => {
           <Box component="main" flexGrow={1} py={3}>
             <Routes>
               <Route exact path='/' element={<HomePage />} />
+              <Route path='/student-list' element={<ShowStudentList />} />
               <Route path='/create-student' element={<CreateStudent />} />
             </Routes>
           </Box>

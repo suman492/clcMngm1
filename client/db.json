@@ -1,1 +1,95 @@
-{}
+{
+    "student":[
+        {
+      "name": "John Doe",
+      "mail_id": "john.doe@example.com",
+      "dob": "2000-05-15T00:00:00Z",
+      "current_address": "123 Main Street, Cityville, ABC Country",
+      "attendance": true,
+      "total_score": 85,
+      "avg_cgpa": 3.7
+    },
+    {
+      "name": "Jane Smith",
+      "mail_id": "jane.smith@example.com",
+      "dob": "1999-08-22T00:00:00Z",
+      "current_address": "456 Oak Avenue, Townsville, DEF Country",
+      "attendance": true,
+      "total_score": 92,
+      "avg_cgpa": 3.9
+    },
+    {
+      "name": "Michael Johnson",
+      "mail_id": "michael.johnson@example.com",
+      "dob": "2001-02-10T00:00:00Z",
+      "current_address": "789 Pine Road, Villageville, GHI Country",
+      "attendance": false,
+      "total_score": 78,
+      "avg_cgpa": 3.5
+    },
+    {
+      "name": "Emily Davis",
+      "mail_id": "emily.davis@example.com",
+      "dob": "2000-11-30T00:00:00Z",
+      "current_address": "101 Maple Street, Lakeside, JKL Country",
+      "attendance": true,
+      "total_score": 88,
+      "avg_cgpa": 3.8
+    },
+    {
+      "name": "David Brown",
+      "mail_id": "david.brown@example.com",
+      "dob": "2002-04-05T00:00:00Z",
+      "current_address": "202 Birch Lane, Hilltop, MNO Country",
+      "attendance": true,
+      "total_score": 94,
+      "avg_cgpa": 4.0
+    },
+    {
+      "name": "Sophia Wilson",
+      "mail_id": "sophia.wilson@example.com",
+      "dob": "2001-01-19T00:00:00Z",
+      "current_address": "303 Cedar Boulevard, Rivercity, PQR Country",
+      "attendance": true,
+      "total_score": 80,
+      "avg_cgpa": 3.6
+    },
+    {
+      "name": "Daniel Martinez",
+      "mail_id": "daniel.martinez@example.com",
+      "dob": "2000-03-13T00:00:00Z",
+      "current_address": "404 Elm Drive, Forestville, STU Country",
+      "attendance": false,
+      "total_score": 76,
+      "avg_cgpa": 3.4
+    },
+    {
+      "name": "Olivia Garcia",
+      "mail_id": "olivia.garcia@example.com",
+      "dob": "1999-12-25T00:00:00Z",
+      "current_address": "505 Pine Street, Beachside, VWX Country",
+      "attendance": true,
+      "total_score": 91,
+      "avg_cgpa": 3.95
+    },
+    {
+      "name": "Liam Rodriguez",
+      "mail_id": "liam.rodriguez@example.com",
+      "dob": "2002-06-12T00:00:00Z",
+      "current_address": "606 Spruce Road, Summitville, YZA Country",
+      "attendance": true,
+      "total_score": 89,
+      "avg_cgpa": 3.8
+    },
+    {
+      "name": "Ava Lopez",
+      "mail_id": "ava.lopez@example.com",
+      "dob": "2000-07-23T00:00:00Z",
+      "current_address": "707 Redwood Drive, Westfield, BCD Country",
+      "attendance": false,
+      "total_score": 84,
+      "avg_cgpa": 3.7
+    }
+    ]
+}
+  
