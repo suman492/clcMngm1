@@ -17,8 +17,11 @@ const CreateStudent = (props) => {
     });
 
     const onChange = (e) => {
-        setStudent({ ...student, [e.target.name]: e.target.value });
+        console.log(e.target.value)
+        setStudent({...student,[e.target.name]: e.target.value})
+        // setStudent({ ...student, [e.target.mail_id]: e.target.value });
       };
+      console.log(student)
 
       const onSubmit = (e) => {
         e.preventDefault();
@@ -85,7 +88,7 @@ const CreateStudent = (props) => {
                             placeholder='Email'
                             name='email'
                             className='form-control'
-                            value={student.mail_id}
+                            value={student.email}
                             onChange={onChange}
                         />
                     </div>
@@ -107,7 +110,7 @@ const CreateStudent = (props) => {
                             placeholder='Enter your current address'
                             name='address'
                             className='form-control'
-                            value={student.current_address}
+                            value={student.address}
                             onChange={onChange}
                         />
                     </div>
@@ -129,7 +132,7 @@ const CreateStudent = (props) => {
                             placeholder='Enter the Total Score'
                             name='score'
                             className='form-control'
-                            value={student.total_score}
+                            value={student.score}
                             onChange={onChange}
                         />
                     </div>
@@ -140,10 +143,15 @@ const CreateStudent = (props) => {
                             placeholder='Enter Average CGPA'
                             name='cgpa'
                             className='form-control'
-                            value={student.avg_cgpa}
+                            value={student.cgpa}
                             onChange={onChange}
                         />
                     </div>
+                    <br />
+                    <input
+                type='submit'
+                className='btn btn-outline-warning btn-block mt-4'
+              />
                 </form>    
             </div>
         </div>
