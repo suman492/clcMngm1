@@ -1,13 +1,14 @@
 {
-    "student":[
-        {
+  "student": [
+    {
       "name": "John Doe",
       "mail_id": "john.doe@example.com",
       "dob": "2000-05-15T00:00:00Z",
       "current_address": "123 Main Street, Cityville, ABC Country",
       "attendance": true,
       "total_score": 85,
-      "avg_cgpa": 3.7
+      "avg_cgpa": 3.7,
+      "id": "7e7b"
     },
     {
       "name": "Jane Smith",
@@ -16,7 +17,8 @@
       "current_address": "456 Oak Avenue, Townsville, DEF Country",
       "attendance": true,
       "total_score": 92,
-      "avg_cgpa": 3.9
+      "avg_cgpa": 3.9,
+      "id": "6647"
     },
     {
       "name": "Michael Johnson",
@@ -25,7 +27,8 @@
       "current_address": "789 Pine Road, Villageville, GHI Country",
       "attendance": false,
       "total_score": 78,
-      "avg_cgpa": 3.5
+      "avg_cgpa": 3.5,
+      "id": "2ee3"
     },
     {
       "name": "Emily Davis",
@@ -34,7 +37,8 @@
       "current_address": "101 Maple Street, Lakeside, JKL Country",
       "attendance": true,
       "total_score": 88,
-      "avg_cgpa": 3.8
+      "avg_cgpa": 3.8,
+      "id": "2889"
     },
     {
       "name": "David Brown",
@@ -43,7 +47,8 @@
       "current_address": "202 Birch Lane, Hilltop, MNO Country",
       "attendance": true,
       "total_score": 94,
-      "avg_cgpa": 4.0
+      "avg_cgpa": 4,
+      "id": "d4c4"
     },
     {
       "name": "Sophia Wilson",
@@ -52,7 +57,8 @@
       "current_address": "303 Cedar Boulevard, Rivercity, PQR Country",
       "attendance": true,
       "total_score": 80,
-      "avg_cgpa": 3.6
+      "avg_cgpa": 3.6,
+      "id": "8f22"
     },
     {
       "name": "Daniel Martinez",
@@ -61,7 +67,8 @@
       "current_address": "404 Elm Drive, Forestville, STU Country",
       "attendance": false,
       "total_score": 76,
-      "avg_cgpa": 3.4
+      "avg_cgpa": 3.4,
+      "id": "f25f"
     },
     {
       "name": "Olivia Garcia",
@@ -70,7 +77,8 @@
       "current_address": "505 Pine Street, Beachside, VWX Country",
       "attendance": true,
       "total_score": 91,
-      "avg_cgpa": 3.95
+      "avg_cgpa": 3.95,
+      "id": "8012"
     },
     {
       "name": "Liam Rodriguez",
@@ -79,7 +87,8 @@
       "current_address": "606 Spruce Road, Summitville, YZA Country",
       "attendance": true,
       "total_score": 89,
-      "avg_cgpa": 3.8
+      "avg_cgpa": 3.8,
+      "id": "2886"
     },
     {
       "name": "Ava Lopez",
@@ -88,8 +97,48 @@
       "current_address": "707 Redwood Drive, Westfield, BCD Country",
       "attendance": false,
       "total_score": 84,
-      "avg_cgpa": 3.7
+      "avg_cgpa": 3.7,
+      "id": "2641"
+    },
+    {
+      "id": "e687",
+      "name": "suman",
+      "mail_id": "sumanpatro@gmail.com",
+      "dob": "2024-12-10",
+      "current_address": "bnj",
+      "attendence": "true",
+      "total_score": "90",
+      "avg_cgpa": "9"
+    },
+    {
+      "id": "80aa",
+      "name": "suman",
+      "mail_id": "sumanpatro@gmail.com",
+      "dob": "2024-12-10",
+      "current_address": "bnj",
+      "attendence": "true",
+      "total_score": "90",
+      "avg_cgpa": "9"
+    },
+    {
+      "id": "ad16",
+      "name": "suman",
+      "mail_id": "sumanpatro@gmail.com",
+      "dob": "2024-12-10",
+      "current_address": "bnj",
+      "attendence": "true",
+      "total_score": "90",
+      "avg_cgpa": "9"
+    },
+    {
+      "id": "030f",
+      "name": "suman",
+      "mail_id": "sumanpatro@gmail.com",
+      "dob": "2024-12-10",
+      "current_address": "bnj",
+      "attendence": "",
+      "total_score": "90",
+      "avg_cgpa": "9"
     }
-    ]
+  ]
 }
-  

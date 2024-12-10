@@ -21,13 +21,14 @@ const CreateStudent = (props) => {
         setStudent({ ...student, [e.target.name]: e.target.value })
         // setStudent({ ...student, [e.target.mail_id]: e.target.value });
     };
-    console.log(student)
+    
 
     const onSubmit = (e) => {
         e.preventDefault();
 
         axios
-            .post('/api/students', student)
+            //.post('/api/students', student)
+            .post('https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/student',student)
             .then((res) => {
                 setStudent({
                     name: '',
@@ -38,6 +39,7 @@ const CreateStudent = (props) => {
                     total_score: '',
                     avg_cgpa: ''
                 });
+                console.log(student)
 
                 // Delay the navigation slightly to allow the toast to be seen
                 setTimeout(() => {
@@ -115,7 +117,7 @@ const CreateStudent = (props) => {
                                 />
                             </div>
                             <br />
-                            <div className='form-group'>
+                            {/* <div className='form-group'>
                                 <input
                                     type='text'
                                     placeholder='Enter True or False'
@@ -125,7 +127,7 @@ const CreateStudent = (props) => {
                                     onChange={onChange}
                                 />
                             </div>
-                            <br />
+                            <br /> */}
                             <div className='form-group'>
                                 <input
                                     type='number'

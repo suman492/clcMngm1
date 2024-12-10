@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Typography, Container, Grid, CircularProgress, Box } from '@mui/material';
 
-//import BookCard from './BookCard';
+import StudentCard from './StudentCard';
 
 function ShowStudentList() {
     const [students, setStudents] = useState([]);
@@ -52,7 +52,7 @@ function ShowStudentList() {
                     ) : (
                         students.map((student,index) => (
                             <Grid item xs={12} sm={6} md={4} key={index}>
-                                {/* <StudentCard student={student} /> */}
+                                <StudentCard student={student} />
                             </Grid>
                         ))
                     )}
