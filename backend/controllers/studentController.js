@@ -7,7 +7,6 @@ exports.createStudentInfo = async (req, res) => {
             mail_id: req.body.mail_id,
             dob: req.body.dob,
             current_address: req.body.current_address,
-            attendence: req.body.attendence,
             total_score: req.body.total_score,
             avg_cgpa: req.body.avg_cgpa
         });

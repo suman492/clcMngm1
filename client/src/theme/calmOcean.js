@@ -20,6 +20,11 @@ const calmOceanColors = {
 };
 
 const calmOceanTheme = createTheme({
+  MuiCssBaseline: {
+    styleOverrides: `
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap');
+    `,
+  },
   palette: {
     mode: 'dark',
     background: {
@@ -86,11 +91,7 @@ const calmOceanTheme = createTheme({
         },
       },
     },
-    MuiCssBaseline: {
-      styleOverrides: `
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap');
-      `,
-    },
+   
   },
 });
 

@@ -11,25 +11,23 @@ const CreateStudent = (props) => {
         mail_id: '',
         dob: '',
         current_address: '',
-        attendence: '',
         total_score: '',
         avg_cgpa: ''
     });
 
     const onChange = (e) => {
-        console.log(e.target.value)
         setStudent({ ...student, [e.target.name]: e.target.value })
-        // setStudent({ ...student, [e.target.mail_id]: e.target.value });
     };
     
 
     const onSubmit = (e) => {
         e.preventDefault();
-
+        console.log(student)
         axios
             //.post('/api/students', student)
-            .post('https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/student',student)
+            .post('https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student',student)
             .then((res) => {
+                console.log(res)
                 setStudent({
                     name: '',
                     mail_id: '',
@@ -39,7 +37,7 @@ const CreateStudent = (props) => {
                     total_score: '',
                     avg_cgpa: ''
                 });
-                console.log(student)
+                
 
                 // Delay the navigation slightly to allow the toast to be seen
                 setTimeout(() => {
@@ -54,7 +52,36 @@ const CreateStudent = (props) => {
                 console.log(err)
             });
     };
-
+    // const onSubmit = async (e) => {
+    //     e.preventDefault();
+    //     console.log(student); // Check if the object is properly populated
+    //     try {
+    //         const response = await axios.post('https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student', student);
+    //         console.log('Server Response:', response.data);
+    //         setStudent({
+    //             name: '',
+    //             mail_id: '',
+    //             dob: '',
+    //             current_address: '',
+    //             total_score: '',
+    //             avg_cgpa: ''
+    //         });
+    //         navigate('/');
+    //     } catch (error) {
+    //         if (error.response) {
+    //             // Server responded with a status other than 2xx
+    //             console.error('Server Error:', error.response.data);
+    //             console.error('Status Code:', error.response.status);
+    //         } else if (error.request) {
+    //             // Request was made but no response
+    //             console.error('No Response:', error.request);
+    //         } else {
+    //             // Something else caused an error
+    //             console.error('Error:', error.message);
+    //         }
+    //     }
+    // };
+    
 
     return (
 
