@@ -65,7 +65,36 @@ const ShowStudentDetails = () => {
 
     return (
         <Container maxWidth="md">
-            
+            {(student && student?.length <=0) ? "No student found ": 
+            student.map((student,index)=> (
+              <StyledPaper key={index}>
+                <Grid container spacing={4}>
+                  <Grid item xs={12} md={4}>
+                    <Card>
+                      <CardMedia 
+                        component="img"
+                        height="300"
+                        image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+                        alt={student.name}
+                      />
+                    </Card>
+                  </Grid>
+                  <Grid item xs={12} md={8}>
+                    <Typography variant='h4' component='h1' gutterBottom>
+                      {student.name}
+                    </Typography>
+                    <Typography variant='h6' color='textSecondary' gutterBottom>
+                      {student.avg_cgpa}
+                    </Typography>
+                    <Divider sx={{ my: 2}} />
+                    <Box display="flex" flexDirection="column">
+                      <Typography variant='body1' paragraph>{student.name}</Typography>
+                      
+                    </Box>
+                  </Grid>
+                </Grid>
+              </StyledPaper>
+            ))}
         </Container>
     )
 }
