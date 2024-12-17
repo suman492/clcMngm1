@@ -27,29 +27,27 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const ShowStudentDetails = () => {
-  const [students, setStudents] = useState({});
+  const [student, setStudent] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
-  const { id } = useParams();
-  console.log(id)
+  const value = useParams();
+  const id = value.id
   const navigate = useNavigate();
 
   useEffect(() => {
-  
-    console.log(id);
-  
-    axios
-      .get(`https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student/${id}`)
-      .then((res) => {
-        console.log(res);
-        setStudents(res.data);
-      })
-      .catch((err) => {
-        console.log('Error from ShowStudentDetails');
-      });
-  }, [id]);
-  
-  console.log(id)
-  console.log(students)
+
+    if (id) {
+      axios
+        .get(`https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student/${id}`)
+        .then((res) => {
+          setStudent(res.data);
+        })
+        .catch((err) => {
+          console.error("Error fetching student details:", err);
+        });
+    }
+
+  }, [id])
+
   const onDeleteClick = () => {
     setOpenDialog(true);
   };
@@ -72,74 +70,70 @@ const ShowStudentDetails = () => {
 
   return (
     <Container maxWidth="md">
-      {
-        console.log(students)
-      }
-      {(students && students?.length <= 0) ? "No student found " :
-        students.map((student, index) => (
-          <StyledPaper key={index}>
-            <Grid container spacing={4}>
-              <Grid item xs={12} md={4}>
-                <Card>
-                  <CardMedia
-                    component="img"
-                    height="300"
-                    image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
-                    alt={student.name}
-                  />
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={8}>
-                <Typography variant='h4' component='h1' gutterBottom>
-                  {student.name}
-                </Typography>
-                <Typography variant='h6' color='textSecondary' gutterBottom>
-                  {student.avg_cgpa}
-                </Typography>
-                <Divider sx={{ my: 2 }} />
-                <Box display="flex" flexDirection="column">
-                  <Typography variant='body1' paragraph>Name: {student.name}</Typography>
-                  <Typography variant='body1'>ID: {student._id}</Typography>
-                  <Typography variant='body1'>Email: {student.mail_id}</Typography>
-                  <Typography variant='body1'>Date of Birth: {student.dob}</Typography>
-                  <Typography variant='body1'>Address: {student.current_address}</Typography>
-                  <Typography variant='body1'>Score: {student.total_score}</Typography>
-                  <Typography variant='body1'>CGPA: {student.avg_cgpa}</Typography>
-                </Box>
-              </Grid>
+      {(
+        <StyledPaper>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={4}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+                  alt={student.name}
+                />
+              </Card>
             </Grid>
-            <Box mt={4} display="flex" justifyContent="space-between">
-              <Button
-                startIcon={<ArrowBackIcon />}
-                component={RouterLink}
-                to="/student-list"
-                variant="outlined"
-              >
-                Back to Student List
-              </Button>
-              <Box>
-                <Button
-                  startIcon={<EditIcon />}
-                  component={RouterLink}
-                  to={`/edit-student/${student._id}`}
-                  variant="contained"
-                  color="primary"
-                  sx={{ mr: 1 }}
-                >
-                  Edit Student
-                </Button>
-                <Button
-                  startIcon={<DeleteIcon />}
-                  onClick={onDeleteClick}
-                  variant="contained"
-                  color="error"
-                >
-                  Delete Book
-                </Button>
+            <Grid item xs={12} md={8}>
+              <Typography variant='h4' component='h1' gutterBottom>
+                {student.name}
+              </Typography>
+              <Typography variant='h6' color='textSecondary' gutterBottom>
+                {student.avg_cgpa}
+              </Typography>
+              <Divider sx={{ my: 2 }} />
+              <Box display="flex" flexDirection="column">
+                <Typography variant='body1' paragraph>Name: {student.name}</Typography>
+                <Typography variant='body1'>ID: {student._id}</Typography>
+                <Typography variant='body1'>Email: {student.mail_id}</Typography>
+                <Typography variant='body1'>Date of Birth: {student.dob}</Typography>
+                <Typography variant='body1'>Address: {student.current_address}</Typography>
+                <Typography variant='body1'>Score: {student.total_score}</Typography>
+                <Typography variant='body1'>CGPA: {student.avg_cgpa}</Typography>
               </Box>
+            </Grid>
+          </Grid>
+          <Box mt={4} display="flex" justifyContent="space-between">
+            <Button
+              startIcon={<ArrowBackIcon />}
+              component={RouterLink}
+              to="/student-list"
+              variant="outlined"
+            >
+              Back to Student List
+            </Button>
+            <Box>
+              <Button
+                startIcon={<EditIcon />}
+                component={RouterLink}
+                to={`/edit-student/${student._id}`}
+                variant="contained"
+                color="primary"
+                sx={{ mr: 1 }}
+              >
+                Edit Student
+              </Button>
+              <Button
+                startIcon={<DeleteIcon />}
+                onClick={onDeleteClick}
+                variant="contained"
+                color="error"
+              >
+                Delete Book
+              </Button>
             </Box>
-          </StyledPaper>
-        ))}
+          </Box>
+        </StyledPaper>
+      )}
 
       {/* Keep the dialog unchanged */}
       <Dialog
