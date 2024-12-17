@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CreateStudent from './components/CreateStudent';
 import ShowStudentList from './components/ShowStudentList';
-// import ShowBookDetails from './components/ShowBookDetails';
+import ShowStudentDetails from './components/ShowStudentDetails';
 // import UpdateBookInfo from './components/UpdateBookInfo';
 import HomePage from './components/Homepage';
 // import NotesPage from './components/NotesPage'; // Import NotesPage component
@@ -28,6 +28,7 @@ const App = () => {
               <Route exact path='/' element={<HomePage />} />
               <Route path='/student-list' element={<ShowStudentList/>} />
               <Route path='/create-student' element={<CreateStudent />} />
+              <Route path='/show-student/:id' element={<ShowStudentDetails />} />
             </Routes>
           </Box>
           <Footer />

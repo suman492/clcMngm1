@@ -18,7 +18,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
-const StyledPaper = Styled(Paper)(({ theme }) => ({
+const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
   marginTop: theme.spacing(4),
   marginBottom: theme.spacing(4),
@@ -27,22 +27,29 @@ const StyledPaper = Styled(Paper)(({ theme }) => ({
 }));
 
 const ShowStudentDetails = () => {
-  const [student, setStudent] = useState({});
+  const [students, setStudents] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
   const { id } = useParams();
+  console.log(id)
   const navigate = useNavigate();
 
   useEffect(() => {
+  
+    console.log(id);
+  
     axios
-      .get(`https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student`)
+      .get(`https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student/${id}`)
       .then((res) => {
-        setStudent(res.data);
+        console.log(res);
+        setStudents(res.data);
       })
       .catch((err) => {
         console.log('Error from ShowStudentDetails');
       });
   }, [id]);
-
+  
+  console.log(id)
+  console.log(students)
   const onDeleteClick = () => {
     setOpenDialog(true);
   };
@@ -65,8 +72,11 @@ const ShowStudentDetails = () => {
 
   return (
     <Container maxWidth="md">
-      {(student && student?.length <= 0) ? "No student found " :
-        student.map((student, index) => (
+      {
+        console.log(students)
+      }
+      {(students && students?.length <= 0) ? "No student found " :
+        students.map((student, index) => (
           <StyledPaper key={index}>
             <Grid container spacing={4}>
               <Grid item xs={12} md={4}>
