@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 
 const connectDB = require('./config/db');
 const studentRoutes = require('./routes/studentRoutes');
+const path = require('path');
 dotenv.config({ path: "./config.env"})
 
 
@@ -20,6 +21,15 @@ app.get('/',(req,res) => {
 });
 app.use('/api', studentRoutes); 
 
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./client/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port,() => {
