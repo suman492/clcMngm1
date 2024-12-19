@@ -13,8 +13,12 @@ const app = express();
 connectDB();
 
 app.use(express.json())
-app.use(cors());
-
+// app.use(cors());
+app.use(cors({
+    origin: 'https://student-mark-management.onrender.com', // Replace with your frontend URL
+    methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
+    credentials: true, // Include credentials if needed (e.g., cookies)
+}));
 
 app.get('/',(req,res) => {
     return res.send('hello world!');
