@@ -25,7 +25,7 @@ const CreateStudent = (props) => {
         console.log(student)
         axios
             //.post('/api/students', student)
-            .post('https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student',student)
+            .post('https://student-mark-management.onrender.com/api/student',student)
             .then((res) => {
                 console.log(res)
                 setStudent({

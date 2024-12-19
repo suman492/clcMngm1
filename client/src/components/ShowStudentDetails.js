@@ -37,7 +37,7 @@ const ShowStudentDetails = () => {
 
     if (id) {
       axios
-        .get(`https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student/${id}`)
+        .get(`https://student-mark-management.onrender.com/api/student/${id}`)
         .then((res) => {
           setStudent(res.data);
         })
