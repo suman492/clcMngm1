@@ -14,6 +14,7 @@ import ShowStudentList from './components/ShowStudentList';
 import ShowStudentDetails from './components/ShowStudentDetails';
 // import UpdateBookInfo from './components/UpdateBookInfo';
 import HomePage from './components/Homepage';
+import ExportPage from './components/ExportPage';
 // import NotesPage from './components/NotesPage'; // Import NotesPage component
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
               <Route path='/student-list' element={<ShowStudentList/>} />
               <Route path='/create-student' element={<CreateStudent />} />
               <Route path='/show-student/:id' element={<ShowStudentDetails />} />
+              <Route path="/export" element={<ExportPage />} />
             </Routes>
           </Box>
           <Footer />
