@@ -20,7 +20,7 @@ app.use(cors({
     credentials: true, // Include credentials if needed (e.g., cookies)
 }));
 
-app.get('/',(req,res) => {
+app.get('/home',(req,res) => {
     return res.send('hello world!');
 });
 app.use('/api', studentRoutes); 
