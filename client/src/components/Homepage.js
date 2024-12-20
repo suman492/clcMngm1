@@ -23,6 +23,13 @@ const Homepage = () => {
                 variant='contained'
                 >Create student
                 </Button>
+                <Button
+                component={Link}
+                to="/export"
+                color='primary'
+                variant='contained'
+                >Export
+                </Button>
             </Box>
         </Container>
     );
