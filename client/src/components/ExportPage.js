@@ -37,10 +37,10 @@ const ExportPage = () => {
 
         const tableColum = ["Name", "DOB", "Total_score", "Avg_cgpa"]
         const tableRows = students.map(student => [
-            book.name,
-            book.dob,
-            book.total_score,
-            book.avg_cgpa
+            student.name,
+            student.dob,
+            student.total_score,
+            student.avg_cgpa
         ]);
 
         doc.autoTable({
