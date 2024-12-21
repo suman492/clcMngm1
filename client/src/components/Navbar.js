@@ -6,11 +6,9 @@ import {
   Typography,
   Button,
   Box,
-  IconButton,
   Menu,
   MenuItem,
 } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
@@ -59,15 +57,7 @@ const Navbar = () => {
               </MenuItem>
             ))}
           </Menu>
-          <IconButton
-            color="primary"
-            component="a"
-            href="https://github.com/suman492/stdmkMgmt"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub">
-            <GitHubIcon />
-          </IconButton>
+          
         </Box>
       </Toolbar>
     </AppBar>
