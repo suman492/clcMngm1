@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Paper, Typography, Button, Box, CircularProgress } from '@mui/material';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-// import TableViewIcon from '@mui/icons-material/TableView';
-// import DownloadIcon from '@mui/icons-material/Download';
-// import DescriptionIcon from '@mui/icons-material/Description';
+import TableViewIcon from '@mui/icons-material/TableView';
+import DownloadIcon from '@mui/icons-material/Download';
+import DescriptionIcon from '@mui/icons-material/Description';
 import axios from 'axios';
-//import { saveAs } from 'file-saver';
+import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-//import * as XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 
 const ExportPage = () => {
     const [students, setStudents] = useState([]);
@@ -54,7 +54,54 @@ const ExportPage = () => {
 
 
         doc.save('students-list.pdf');
-    }
+    };
+
+    const exportToExcel = () => {
+        const worksheet = XLSX.utils.json_to_sheet(students.map(student => ({
+            Name: student.name,
+            Email: student.mail_id,
+            DOB: student.dob,
+            Score: student.total_score,
+            CGPA: student.avg_cgpa
+        })));
+
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Students");
+        const excelBuffer = XLSX.write(workbook, { studentType: 'xlsx', type: 'array' });
+        const data = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        saveAs(data, 'students-list.xlsx');
+    };
+
+    const exportToCSV = () => {
+        const worksheet = XLSX.utils.json_to_sheet(students.map(student => ({
+            Name: student.name,
+            Email: student.mail_id,
+            DOB: student.dob,
+            Score: student.total_score,
+            CGPA: student.avg_cgpa
+        })));
+        
+        const csv = XLSX.utils.sheet_to_csv(worksheet);
+        const data = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+        saveAs(data, 'students-list.csv');
+      };
+
+      const exportToText = () => {
+        let content = 'Students List\n\n';
+        content += `Generated on: ${new Date().toLocaleDateString()}\n\n`;
+
+        students.forEach((student, index) => {
+            content += `${index + 1}. STUDENT DETAILS\n`;
+            content += `Name: ${student.name}\n`;
+            content += `DOB: ${student.dob}\n`;
+            content += `Score: ${student.total_score}\n`;
+            content += `CGPA: ${student.avg_cgpa}`;
+            content += '\n----------------------------\n\n';
+        });
+
+        const blob = new Blob([content], {type: 'text/plain;charset=utf-8' });
+        saveAs(blob, 'patients-list.txt');
+      }
 
     if (loading) {
         return (
@@ -91,7 +138,37 @@ const ExportPage = () => {
                     >
                         Export as PDF
                     </Button>
+                    { <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<TableViewIcon />}
+                    onClick={exportToCSV}
+                    sx={{ p: 2 }}
+                  >
+                    Export as CSV
+                  </Button> }
+                  { <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<DownloadIcon />}
+                    onClick={exportToExcel}
+                    sx={{ p: 2 }}
+                  >
+                    Export as Excel
+                  </Button> }
+                  { <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<DescriptionIcon />}
+                    onClick={exportToText}
+                    sx={{ p: 2 }}
+                  >
+                    Export as Text
+                  </Button> }
                 </Box>
+                <Typography variant="body2" sx={{ mt: 4 }} align="center" color="text.secondary">
+                  Total Students: {students.length}
+                </Typography>
             </Paper>
         </Container>
     )
