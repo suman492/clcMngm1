@@ -27,7 +27,7 @@ const SearchStudents = () => {
 
     const [filters, setFilters] = useState({
         searchTerm: '',
-        searchField: 'title',
+        searchField: 'name',
         sortBy: 'title',
         sortOrder: 'asc',
         name: 'all'
