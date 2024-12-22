@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Typography, Button, Box } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 const Homepage = () => {
@@ -53,6 +54,17 @@ const Homepage = () => {
                     >
                     Resume
                 </Button>
+                <Button
+              component={Link}
+              to="/search"
+              variant="contained"
+              size="large"
+              startIcon={<SearchIcon />}
+              fullWidth
+              sx={{ py: 2 }}
+            >
+              Search Students
+            </Button>
             </Box>
         </Container>
     );
