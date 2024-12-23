@@ -54,10 +54,15 @@ const SearchStudents = () => {
         let result = [...students];
 
         if (filters.searchTerm) {
-            result = result.filter(book => {
-                const searchValue = book[filters.searchField]?.toString().toLowerCase();
+            result = result.filter(student => {
+                const searchValue = student[filters.searchField]?.toString().toLowerCase();
                 return searchValue?.includes(filters.searchTerm.toLowerCase());
             });
+        }
+
+        // Apply name filter
+        if (filters.name !== 'all') {
+            result = result.filter(student => student.name === filters.name);
         }
 
         setFilteredStudents(result);
@@ -94,6 +99,23 @@ const SearchStudents = () => {
                                 startAdornment: <SearchIcon sx={{ mr: 1, color: 'text.secondary' }} />
                                }}
                             />
+                        </Grid>
+
+                        {/*Search By Dropdown */}
+                        <Grid item sx={12} md={2}>
+                            <FormControl fullWidth>
+                                <InputLabel>Search By</InputLabel>
+                                <Select
+                                   value={filters.searchField}
+                                   label="Search By"
+                                   onChange={(e) => setFilters({ ...filters,searchField: e.target.value })}
+                                >
+                                    <MenuItem value="name">Name</MenuItem>
+                                    <MenuItem value="current_address">Address</MenuItem>
+                                    <MenuItem value="total_score">Score</MenuItem>
+                                    <MenuItem value="avg_cgpa">CGPA</MenuItem>
+                                </Select>  
+                            </FormControl>
                         </Grid>
                     </Grid>
                 </CardContent>
