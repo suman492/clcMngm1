@@ -28,7 +28,7 @@ const SearchStudents = () => {
     const [filters, setFilters] = useState({
         searchTerm: '',
         searchField: 'name',
-        sortBy: 'title',
+        sortBy: 'name',
         sortOrder: 'asc',
         name: 'all'
     });
@@ -64,6 +64,14 @@ const SearchStudents = () => {
         if (filters.name !== 'all') {
             result = result.filter(student => student.name === filters.name);
         }
+
+        // Apply Sorting
+        result.sort((a,b) => {
+            let valueA = a[filters.sortBy]?.toString().toLowerCase();
+            let valueB = b[filters.sortBy]?.toString().toLowerCase();
+
+            if (filters.sortBy)
+        })
 
         setFilteredStudents(result);
     }
@@ -115,6 +123,22 @@ const SearchStudents = () => {
                                     <MenuItem value="total_score">Score</MenuItem>
                                     <MenuItem value="avg_cgpa">CGPA</MenuItem>
                                 </Select>  
+                            </FormControl>
+                        </Grid>
+
+                        {/*Sort By Dropdown */}
+                        <Grid item xs={12} md={2}>
+                            <FormControl fullWidth>
+                                <InputLabel>Sort By</InputLabel>
+                                <Select
+                                   value={filters.sortBy}
+                                   label="Sort By"
+                                   onChange={(e) => setFilters({ ...filters,sortBy: e.target.value })}
+                                >
+                                    <MenuItem value="name">Name</MenuItem>
+                                    <MenuItem value="current_address">Address</MenuItem>
+                                    <MenuItem value="dob">DOB</MenuItem>
+                                </Select>
                             </FormControl>
                         </Grid>
                     </Grid>
