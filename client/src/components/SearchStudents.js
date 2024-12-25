@@ -70,7 +70,15 @@ const SearchStudents = () => {
             let valueA = a[filters.sortBy]?.toString().toLowerCase();
             let valueB = b[filters.sortBy]?.toString().toLowerCase();
 
-            if (filters.sortBy)
+            if (filters.sortBy === 'dob') {
+                valueA = new Date(a.dob);
+                valueB = new Date(a.dob);
+            }
+
+
+            if (valueA < valueB) return filters.sortOrder === 'asc' ? -1 : 1;
+            if (valueA > valueB) return filters.sortOrder === 'asc' ? 1 : -1;
+            return 0;
         })
 
         setFilteredStudents(result);
@@ -79,6 +87,16 @@ const SearchStudents = () => {
     useEffect(()=> {
         applyFilters();
     },[filters]);
+
+    const resetFilters = () => {
+        setFilters({
+            searchTerm: '',
+            searchField: 'name',
+            sortBy: 'name',
+            sortOrder: 'asc',
+            name: 'all'
+        });
+    };
 
     if (loading) {
         return (
@@ -140,6 +158,53 @@ const SearchStudents = () => {
                                     <MenuItem value="dob">DOB</MenuItem>
                                 </Select>
                             </FormControl>
+                        </Grid>
+
+                        {/*Sort Order*/}
+                        <Grid item xs={12} md={2}>
+                            <FormControl fullWidth>
+                                <InputLabel>Order</InputLabel>
+                                <Select
+                                   value={filters.sortOrder}
+                                   label="Order"
+                                   onChange={(e) => setFilters({ ...filters, sortOrder: e.target.value })}
+                                >
+                                    <MenuItem value="asc">Ascending</MenuItem>
+                                    <MenuItem value="desc">Descending</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+
+                        {/*Name Filter */}
+                        <Grid item xs={12} md={2}>
+                            <FormControl fullWidth>
+                                <InputLabel>Name</InputLabel>
+                                <Select
+                                   value={filters.name}
+                                   label="Name"
+                                   onChange={(e) => setFilters({ ...filters, name: e.target.value })}
+                                >
+                                    <MenuItem value="all">All Names</MenuItem>
+                                    {names.map((name, index) => (
+                                        <MenuItem key={index} value={name}>
+                                            {name}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                        </Grid>
+
+                        {/*Reset Button*/}
+                        <Grid item xs={12}>
+                            <Box display="flex" justifyContent="center">
+                                <Button
+                                   variant='outlined'
+                                   startIcon={<RestartAltIcon />}
+                                   onClick={resetFilters}
+                                >
+                                    Reset Filters
+                                </Button>
+                            </Box>
                         </Grid>
                     </Grid>
                 </CardContent>
