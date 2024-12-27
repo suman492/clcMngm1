@@ -65,7 +65,7 @@ function UpdateStudentInfo(props) {
     <div className='UpdateStudentInfo'>
       <div className='container d-flex align-items-center justify-content-center'>
         <div className='row w-100'>
-          <div className='col-md-8 m-auto'>
+          <div className='col-md-8 m-auto' style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
             <br />
             <Link to='/' className='btn btm-outline-warning float-left'>
               Show Student List
@@ -77,7 +77,7 @@ function UpdateStudentInfo(props) {
           </div>
         </div>
 
-        <div className='col-md-8 m-auto' style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+        <div className='col-md-8 m-auto'>
           <form noValidate onSubmit={onSubmit}>
             <div className='form-group'>
               <label htmlFor='name'>Name</label>
