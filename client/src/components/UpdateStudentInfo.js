@@ -64,8 +64,8 @@ function UpdateStudentInfo(props) {
   return (
     <div className='UpdateStudentInfo'>
       <div className='container d-flex align-items-center justify-content-center'>
-        <div className='row w-100'>
-          <div className='col-md-8 m-auto' style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+        <div className='row' style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+          <div className='col-md-8 m-auto'>
             <br />
             <Link to='/' className='btn btm-outline-warning float-left'>
               Show Student List
