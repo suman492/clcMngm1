@@ -77,7 +77,7 @@ function UpdateStudentInfo(props) {
           </div>
         </div>
 
-        <div className='col-md-8 m-auto'>
+        <div className='col-md-8 m-auto' style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
           <form noValidate onSubmit={onSubmit}>
             <div className='form-group'>
               <label htmlFor='name'>Name</label>
