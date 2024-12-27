@@ -63,7 +63,7 @@ function UpdateStudentInfo(props) {
 
   return (
     <div className='UpdateStudentInfo'>
-      <div className='container'>
+      <div className='container d-flex align-items-center justify-content-center'>
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
