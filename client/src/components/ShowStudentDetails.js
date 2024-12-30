@@ -59,7 +59,7 @@ const ShowStudentDetails = () => {
         navigate('/student-list');
       })
       .catch((err) => {
-        console.log('Error from ShowStudentDetails_deleteClick');
+        console.log('Error from ShowStudentDetails_deleteClick',err);
       });
     setOpenDialog(false);
   };
