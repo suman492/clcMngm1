@@ -54,7 +54,7 @@ const ShowStudentDetails = () => {
 
   const handleDeleteConfirm = () => {
     axios
-      .delete(`https://5000-suman492-stdmkmgmt-wgp8vr4w28d.ws-us117.gitpod.io/api/student`)
+      .delete(`https://student-mark-management.onrender.com/api/student/${id}`)
       .then((res) => {
         navigate('/student-list');
       })
