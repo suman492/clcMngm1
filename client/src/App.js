@@ -16,6 +16,7 @@ import UpdateStudentInfo from './components/UpdateStudentInfo';
 import HomePage from './components/Homepage';
 import ExportPage from './components/ExportPage';
 import SearchStudents from './components/SearchStudents';
+import QRCodePage from './components/QRCodePage';
 // import NotesPage from './components/NotesPage'; // Import NotesPage component
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
               <Route path="/export" element={<ExportPage />} />
               <Route path="/search" element={<SearchStudents />} />
               <Route path='/edit-student/:id' element={<UpdateStudentInfo />} />
+              <Route path="/qr-codes" element={<QRCodePage />} />
             </Routes>
           </Box>
           <Footer />

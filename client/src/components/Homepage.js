@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Typography, Button, Box } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchIcon from '@mui/icons-material/Search';
+import QrCodeIcon from '@mui/icons-material/QrCode';
 
 
 const Homepage = () => {
@@ -64,6 +65,17 @@ const Homepage = () => {
               sx={{ py: 2 }}
             >
               Search Students
+            </Button>
+            <Button
+              component={Link}
+              to="/qr-codes"
+              variant="contained"
+              size="large"
+              startIcon={<QrCodeIcon />}
+              fullWidth
+              sx={{ py: 2 }}
+            >
+              QR Codes
             </Button>
             </Box>
         </Container>
