@@ -15,6 +15,8 @@ const CreateStudent = (props) => {
         avg_cgpa: ''
     });
 
+    const URL = process.env.RENDER_URL
+
     const onChange = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value })
     };
@@ -25,7 +27,7 @@ const CreateStudent = (props) => {
         console.log(student)
         axios
             //.post('/api/students', student)
-            .post('https://student-mark-management.onrender.com/api/student',student)
+            .post(`${URL}/api/student`,student)
             .then((res) => {
                 console.log(res)
                 setStudent({

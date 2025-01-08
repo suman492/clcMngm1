@@ -5,13 +5,15 @@ import { Button, Typography, Container, Grid, CircularProgress, Box } from '@mui
 
 import StudentCard from './StudentCard';
 
+const URL = process.env.RENDER_URL
+
 function ShowStudentList() {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         axios
-        .get(`https://student-mark-management.onrender.com/api/student`)
+        .get(`${URL}/api/student`)
         .then((res) => {
             setStudents(res.data);
             setLoading(false);

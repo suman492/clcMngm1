@@ -16,10 +16,11 @@ import axios from 'axios';
 const QRCodePage = () => {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
-    const baseUrl = 'https://student-mark-management.onrender.com/show-student/';
+    const URL = process.env.RENDER_URL
+    const baseUrl = `${URL}/show-student/`;
 
     useEffect(() => {
-        axios.get('https://student-mark-management.onrender.com/api/student')
+        axios.get(`${URL}/api/student`)
             .then(res => {
                 setStudents(res.data);
                 setLoading(false);

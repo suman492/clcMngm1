@@ -19,6 +19,8 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import StudentCard from './StudentCard';
 import axios from 'axios';
 
+const URL = process.env.RENDER_URL
+
 const SearchStudents = () => {
     const [students, setStudents] = useState([]);
     const [filteredStudents, setFilteredStudents] = useState([]);
@@ -35,7 +37,7 @@ const SearchStudents = () => {
 
 
     useEffect(() => {
-        axios.get(`https://student-mark-management.onrender.com/api/student`)
+        axios.get(`${URL}/api/student`)
           .then(res => {
             setStudents(res.data);
             setFilteredStudents(res.data);

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const URL = process.env.RENDER_URL
+
 function UpdateStudentInfo(props) {
   const [student, setStudent] = useState({
     name: '',
@@ -17,7 +19,7 @@ function UpdateStudentInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`https://student-mark-management.onrender.com/api/student/${id}`)
+      .get(`${URL}/api/student/${id}`)
       .then((res) => {
         setStudent({
           name: res.data.name,
@@ -51,7 +53,7 @@ function UpdateStudentInfo(props) {
     };
 
     axios
-      .put(`https://student-mark-management.onrender.com/api/student/${id}`, data)
+      .put(`${URL}/api/student/${id}`, data)
       .then((res) => {
         navigate(`/show-student/${id}`);
       })

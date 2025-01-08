@@ -18,6 +18,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
+const URL = process.env.RENDER_URL
+
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
   marginTop: theme.spacing(4),
@@ -37,7 +39,7 @@ const ShowStudentDetails = () => {
 
     if (id) {
       axios
-        .get(`https://student-mark-management.onrender.com/api/student/${id}`)
+        .get(`${URL}/api/student/${id}`)
         .then((res) => {
           setStudent(res.data);
         })
@@ -54,7 +56,7 @@ const ShowStudentDetails = () => {
 
   const handleDeleteConfirm = () => {
     axios
-      .delete(`https://student-mark-management.onrender.com/api/student/${id}`)
+      .delete(`${URL}/api/student/${id}`)
       .then((res) => {
         navigate('/student-list');
       })

@@ -10,12 +10,14 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import * as XLSX from 'xlsx';
 
+const URL = process.env.RENDER_URL
+
 const ExportPage = () => {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://student-mark-management.onrender.com/api/student')
+        axios.get(`${URL}/api/student`)
             .then(res => {
                 setStudents(res.data);
                 setLoading(false);
