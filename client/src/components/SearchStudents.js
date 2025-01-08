@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
     Container,
     TextField,
@@ -50,7 +50,7 @@ const SearchStudents = () => {
           });
     },[]);
 
-    const applyFilters = () => {
+    const applyFilters = useCallback(() => {
         let result = [...students];
 
         if (filters.searchTerm) {
@@ -82,11 +82,11 @@ const SearchStudents = () => {
         })
 
         setFilteredStudents(result);
-    }
+    },[filters, students])
 
     useEffect(()=> {
         applyFilters();
-    },[filters]);
+    },[applyFilters]);
 
     const resetFilters = () => {
         setFilters({
