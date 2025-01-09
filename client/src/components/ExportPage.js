@@ -10,7 +10,7 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import * as XLSX from 'xlsx';
 
-const URL = process.env.RENDER_URL
+const URL = process.env.REACT_APP_RENDER_URL
 
 const ExportPage = () => {
     const [students, setStudents] = useState([]);

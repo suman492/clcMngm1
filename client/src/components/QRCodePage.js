@@ -16,7 +16,7 @@ import axios from 'axios';
 const QRCodePage = () => {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
-    const URL = process.env.RENDER_URL
+    const URL = process.env.REACT_APP_RENDER_URL
     const baseUrl = `${URL}/show-student/`;
 
     useEffect(() => {

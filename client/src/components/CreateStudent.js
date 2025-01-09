@@ -15,7 +15,7 @@ const CreateStudent = (props) => {
         avg_cgpa: ''
     });
 
-    const URL = process.env.RENDER_URL
+    const URL = process.env.REACT_APP_RENDER_URL
 
     const onChange = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value })

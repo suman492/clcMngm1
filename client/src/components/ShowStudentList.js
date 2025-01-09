@@ -5,7 +5,7 @@ import { Button, Typography, Container, Grid, CircularProgress, Box } from '@mui
 
 import StudentCard from './StudentCard';
 
-const URL = process.env.RENDER_URL
+const URL = process.env.REACT_APP_RENDER_URL
 
 function ShowStudentList() {
     const [students, setStudents] = useState([]);

@@ -18,7 +18,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
-const URL = process.env.RENDER_URL
+const URL = process.env.REACT_APP_RENDER_URL
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
