@@ -19,7 +19,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import StudentCard from './StudentCard';
 import axios from 'axios';
 
-const URL = process.env.RENDER_URL
+const URL = process.env.REACT_APP_RENDER_URL
 
 const SearchStudents = () => {
     const [students, setStudents] = useState([]);

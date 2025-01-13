@@ -12,11 +12,11 @@ import {
 } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import axios from 'axios';
+const URL = process.env.REACT_APP_RENDER_URL
 
 const QRCodePage = () => {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
-    const URL = process.env.REACT_APP_RENDER_URL
     const baseUrl = `${URL}/show-student/`;
 
     useEffect(() => {
