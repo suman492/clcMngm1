@@ -12,7 +12,7 @@ const calmOceanColors = {
   gold: '#FFB703',
   rose: '#FB8500',
   pine: '#219EBC',
-  foam: '#8ECAE6',
+  foam: '#f5f7f7',
   iris: '#023047',
   highlightLow: '#264653',
   highlightMed: '#2A9D8F',

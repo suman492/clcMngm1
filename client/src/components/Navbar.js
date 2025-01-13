@@ -31,14 +31,14 @@ const Navbar = () => {
     return (
     <AppBar position='static' color='transparent' elevation={0} sx={{ width: '100%' }}>
       <Toolbar>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'primary.main' }}>
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'secondary.main' }}>
         Student Mark Management
         </Typography>
         <Box sx = {{ display: 'flex' , alignItems: 'center' , gap: '1'}}>
-        <Button color="primary" component={RouterLink} to="/" startIcon={<HomeIcon />} >
+        <Button color="secondary" component={RouterLink} to="/" startIcon={<HomeIcon />} >
             Home
           </Button>
-          <Button color="primary" onClick={handleNotesClick} startIcon={<MenuBookIcon />} >
+          <Button color="secondary" onClick={handleNotesClick} startIcon={<MenuBookIcon />} >
             Notes
           </Button>
           <Menu
